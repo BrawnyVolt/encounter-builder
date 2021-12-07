@@ -25,17 +25,7 @@ function NavBar() {
       >
         Home
       </NavLink>
-      <NavLink
-        to="/Search"
-        exact
-        style={linkStyles}
-        className="nav-bar-route"
-        activeStyle={{
-          background: "#235789",
-        }}
-      >
-        Search
-      </NavLink>
+
       <NavLink
         to="/Login"
         exact
