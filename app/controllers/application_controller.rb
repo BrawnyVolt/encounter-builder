@@ -1,8 +1,3 @@
 class ApplicationController < ActionController::Base 
-
-def index
-end
-
-
-
+    include ActionController::Cookies
 end

@@ -10,12 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_07_033707) do
+ActiveRecord::Schema.define(version: 2021_12_07_221701) do
+
+  create_table "encounters", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "monster_encounters", force: :cascade do |t|
+    t.integer "monster_id"
+    t.integer "encounter_id"
+    t.integer "quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "monsters", force: :cascade do |t|
+    t.string "name"
+    t.string "hp"
+    t.string "ac"
+    t.string "img_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password"
-    t.integer "user_id"
+    t.string "password_digest"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
