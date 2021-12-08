@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :encounters
-  resources :monsters
+  resources :monsters, only: [:index]
   resources :users
 
 
