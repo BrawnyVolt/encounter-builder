@@ -8,17 +8,36 @@ function MonsterBar(){
   //   target.appendChild(cln);
   //   target.prepend
   // }
+  let lastButton = ""
+//   function deleteButtonClick(){
+//     lastButton.previousSibling.remove;
+//     lastButton.remove;
+// }
 
 
   function addNewMonsterRow() {
-    console.log("hit")
+    // grabbing the div the select bar lives in, for cloning. It looks like we're also grabbing the div and cloning it too :\
     let copiedNodeLocation = document.getElementById("copy-target");
-    debugger;
+    // //cloning
     let clonedNode = copiedNodeLocation.cloneNode(true);
-    document.getElementById("insert-here").prepend(clonedNode);
-  }
-  
+    // //gotta put the clone somewhere, we gonna put it after an empty div
+    document.getElementById("insert-here").append(clonedNode);
+    // //now delete the button that comes with it.
+    let plusButtons = document.querySelectorAll('.button-bby');
+    let lastButton = plusButtons[plusButtons.length-1];
+    lastButton.innerText="x";
+    lastButton.onclick = lastButton.remove;
 
+    let allCopyTargets = document.querySelectorAll("#copy-target");
+    let lastTarget = allCopyTargets[allCopyTargets.length-1];
+    console.log(lastTarget);
+    // lastButton.onclick = lastTarget.remove(); 
+    // lastButton.onclick = lastButton.remove; 
+    //this will delete the new "+" button as the clone is made, i'm commenting it out for now to try an get a "-" button working
+    // lastButton.remove();
+  }
+
+  
     return (
       <div>
         <div id="copy-target">
@@ -351,7 +370,7 @@ function MonsterBar(){
               <option value="Young White Dragon">Young White Dragon</option>
               <option value="Zombie">Zombie</option>
           </select>
-          <button onClick={addNewMonsterRow}>+</button>
+          <button className="button-bby" onClick={addNewMonsterRow}>+</button>
         </div>
       <div id="insert-here"></div>
     </div>
