@@ -25,6 +25,19 @@ function NavBar() {
       >
         Home
       </NavLink>
+      
+      <NavLink
+        to="/newencounter"
+        exact
+        style={linkStyles}
+        className="nav-bar-route"
+        activeStyle={{
+          background: "#235789",
+        }}
+      >
+        New Encounter
+      </NavLink>
+
       <NavLink
         to="/Search"
         exact
@@ -36,6 +49,7 @@ function NavBar() {
       >
         Search
       </NavLink>
+
       <NavLink
         to="/Login"
         exact
@@ -47,6 +61,7 @@ function NavBar() {
       >
         Login
       </NavLink>
+
       <NavLink
         to="/Signup"
         exact
@@ -56,8 +71,9 @@ function NavBar() {
           background: "#235789",
         }}
       >
-        Signup
+        Sign Up
       </NavLink>
+
     </div>
   )
 };

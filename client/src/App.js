@@ -5,6 +5,7 @@ import Home from "./Home";
 import Login from "./Login";
 import Signup from "./Signup";
 import Search from "./Search";
+import NewEncounter from "./NewEncounter";
 
 
 
@@ -16,6 +17,7 @@ function App() {
       <div>
         <NavBar/>
         <Routes>
+          <Route path="/newencounter" element={<NewEncounter />} />
           <Route path="/login" element={<Login user={user} setUser={setUser} />} />
           <Route path="/signup" element={<Signup user={user} setUser={setUser} />} />
           <Route path="/search" element={<Search user={user} />} />
