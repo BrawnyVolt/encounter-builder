@@ -39,13 +39,17 @@ function MonsterBar(){
     // lastButton.onclick = lastButton.remove; 
     //this will delete the new "+" button as the clone is made, i'm commenting it out for now to try an get a "-" button working
     // lastButton.remove();
+
+
   }
+  
 
   
     return (
       <div>
         <div id="copy-target">
-          <select className="monster-bar">
+          <div>
+            <select className="monster-bar">
               <option value="1">Aboleth</option>
               <option value="2">Acolyte</option>
               <option value="3">Adult Black Dragon</option>
@@ -373,11 +377,14 @@ function MonsterBar(){
               <option value="325">Young Silver Dragon</option>
               <option value="326">Young White Dragon</option>
               <option value="327">Zombie</option>
-          </select>
-          <button className="button-bby" onClick={addNewMonsterRow}>+</button>
+            </select>
+            <button className="button-bby" onClick={addNewMonsterRow}>+</button>
+          </div>
+        <label>Quantity:</label>
+        <input type="number" value="1" size="4" min="1" max="99"></input>
         </div>
-      <div id="insert-here"></div>
-    </div>
+        <div id="insert-here"></div>
+      </div>
   )
 }
 
