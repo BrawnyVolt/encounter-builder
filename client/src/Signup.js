@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Signup({ setUser }) {
   const [username, setUsername] = useState([]);
   const [password, setPassword] = useState([]);
   const [password_confirmation, setPasswordConfirmation] = useState([]);
+  const navigate = useNavigate()
+
 
   function toggleShowPassword() {
     const password = document.querySelector("#password");
@@ -21,7 +24,7 @@ function Signup({ setUser }) {
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:3000/users", {
+    fetch("signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -30,6 +33,7 @@ function Signup({ setUser }) {
     }).then((response) => {
       if (response.ok) {
         response.json().then((user) => setUser(user));
+        navigate("/")
       }
     });
   }

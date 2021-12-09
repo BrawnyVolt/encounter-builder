@@ -1,5 +1,20 @@
-function Search() {
+import { useEffect } from "react";
 
+function Search({user}) {
+
+
+
+    useEffect(()=>{
+        
+        fetch("mystuff")
+        .then(r => r.json())
+        .then((json) => renderUser(json))
+
+    },[])
+
+function renderUser (userData){
+    console.log(userData);
+}
 
     return(
         <div>

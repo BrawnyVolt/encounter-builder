@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+
 
 function Login({ setUser }) {
 
   const [username, setUsername] = useState([]);
   const [password, setPassword] = useState([]);
+  const navigate = useNavigate();
 
   function toggleShowPassword() {
     const password = document.querySelector("#password");
@@ -15,7 +17,7 @@ function Login({ setUser }) {
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    fetch("/login", {
+    fetch("login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -25,6 +27,7 @@ function Login({ setUser }) {
       if (response.ok) {
         response.json().then((user) => setUser(user))
         .then(loginAlert);
+        navigate("/")
       }
     });
   }

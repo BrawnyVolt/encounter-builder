@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   resources :encounters
   resources :monsters, only: [:index]
-  resources :users
+  resources :users, except: [:create, :show]
+
+  
+  post '/signup', to: 'users#create'
+
+  get '/mystuff', to: 'users#show'
 
 
   post '/login', to: 'sessions#create'
