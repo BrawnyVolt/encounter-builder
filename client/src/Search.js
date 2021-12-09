@@ -11,6 +11,15 @@ function Search({user}) {
         .then((json) => renderUser(json))
 
     },[])
+    let currentName = "";
+    function singleCard(name, hp, ac, img_url, quantity) {
+        
+    }
+
+    function cardFactory(){
+        // take in the incoming fetch, for each key/value pair, get mon name, hp, ac, img_url from monster.find(:id-from-fetch), then do card quan:value times
+    }
+
 
 function renderUser (userData){
     console.log(userData);
