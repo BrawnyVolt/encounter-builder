@@ -26,7 +26,7 @@ function MonsterBar(){
     let plusButtons = document.querySelectorAll('.button-bby');
     let lastButton = plusButtons[plusButtons.length-1];
     lastButton.innerText="x";
-    lastButton.onclick = lastButton.remove;
+    lastButton.onclick = lastButton.parentElement.remove;
 
 
     //jogo code
@@ -48,7 +48,6 @@ function MonsterBar(){
     return (
       <div>
         <div id="copy-target">
-          <div>
             <select className="monster-bar">
               <option value="1">Aboleth</option>
               <option value="2">Acolyte</option>
@@ -379,7 +378,7 @@ function MonsterBar(){
               <option value="327">Zombie</option>
             </select>
             <button className="button-bby" onClick={addNewMonsterRow}>+</button>
-          </div>
+          <br />
         <label>Quantity:</label>
         <input type="number" value="1" size="4" min="1" max="99"></input>
         </div>

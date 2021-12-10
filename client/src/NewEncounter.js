@@ -1,6 +1,22 @@
 import MonsterBar from "./MonsterBar.js"
 
 function NewEncounter(){
+//first part of the fetch is post a new encounter (with a name) and then return back(when it's done) the encounter number
+//then use that number as the encounter_id and grab the arrays with stuff for the mon_id and quantity.
+///then post those 3 to the join table and move on to the next pair.
+//do this for the length of the array (post-streilizing)
+
+
+
+
+
+    function gettingBothValuesSimul(){
+        let listOfMonsterNodes = document.getElementsByTagName('select');
+        let listOfQuantities = document.getElementsByTagName('input');
+        //for each index, post to monster_encounter
+        
+    }
+
 
     let monsterArray = [];
     let quantityArray = [];
@@ -11,10 +27,8 @@ function NewEncounter(){
         let listOfMonsterNodes = document.getElementsByTagName('select');
         //then iterate through them
         let monIndex;
-        let monsterArray = []
         for (monIndex = 0; monIndex < listOfMonsterNodes.length; ++monIndex) {
             console.log(listOfMonsterNodes[monIndex].value);
-            let mArray = monsterArray.push(listOfMonsterNodes[monIndex].value);
         } 
     }
     function mappingInstead(){
@@ -32,14 +46,21 @@ function NewEncounter(){
         let quanIndex;
         let quantityArray = []
         for (quanIndex = 0; quanIndex < listOfQuantities.length; ++quanIndex) {
+            if(listOfQuantities[quanIndex].value === ""){
+            console.log ("0");
+            quantityArray.push("0")
+         } else{
             console.log(listOfQuantities[quanIndex].value);
             let qArray = listOfQuantities[quanIndex].value;
             quantityArray.push(qArray);
+            console.log(quantityArray); }
         } 
     }
     function getAllValues() {
         gettingTheSelects()
         gettingTheQuantities()
+        console.log(monsterArray, quantityArray);
+        
     }
 
 
