@@ -42,12 +42,15 @@ function MonsterBar(){
 
 
   }
-  
+function remove(element) {
+  let deleteTarget = element.target.parentNode;
+  deleteTarget.remove();
+}  
 
   
     return (
-      <div>
-        <div id="copy-target">
+
+        <div className="whole-search-chunk">
             <select className="monster-bar">
               <option value="1">Aboleth</option>
               <option value="2">Acolyte</option>
@@ -377,13 +380,12 @@ function MonsterBar(){
               <option value="326">Young White Dragon</option>
               <option value="327">Zombie</option>
             </select>
-            <button className="button-bby" onClick={addNewMonsterRow}>+</button>
+            <button className="button-bby" onClick={remove(this)}>+</button>
           <br />
         <label>Quantity:</label>
         <input type="number" value="1" size="4" min="1" max="99"></input>
         </div>
-        <div id="insert-here"></div>
-      </div>
+
   )
 }
 

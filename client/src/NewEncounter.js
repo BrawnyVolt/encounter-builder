@@ -31,15 +31,23 @@ function NewEncounter(){
             console.log(listOfMonsterNodes[monIndex].value);
         } 
     }
-    function mappingInstead(){
-        let listOfMonsterNodes = document.getElementsByTagName('select');
 
-        const arrayofnewstuff = listOfMonsterNodes.map((index, value) => {
-            console.log(listOfMonsterNodes[value].value);
-        })
-        console.log(arrayofnewstuff);
-        
+    //output is gonna look like:
+    //{monster_id: #,  encounter_id: #,  quantity: #}
+
+
+    let result = {};
+    function keyValuing(monArray, quanArray){
+        monArray.forEach()
+
+
+        let result = {};
+        //this will pair twop arrays up with eachother, we need to modify that array
+
+        keys.forEach((key, i) => result[key] = values[i]);
+        console.log(result);
     }
+    
 
     function gettingTheQuantities(){
         let listOfQuantities = document.getElementsByTagName('input');
