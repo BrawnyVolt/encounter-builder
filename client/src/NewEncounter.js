@@ -35,6 +35,8 @@ function NewEncounter(){
     //output is gonna look like:
     //{monster_id: #,  encounter_id: #,  quantity: #}
 
+ let keys = ""
+ let values = ""
 
     let result = {};
     function keyValuing(monArray, quanArray){
@@ -65,9 +67,23 @@ function NewEncounter(){
         } 
     }
     function getAllValues() {
-        gettingTheSelects()
-        gettingTheQuantities()
-        console.log(monsterArray, quantityArray);
+
+            console.log('Beginning fetch');
+            fetch('http://localhost:3000/encounters', {
+              method: 'POST',
+              body: JSON.stringify({
+                  "name": "Fetchmade encounter",
+                  "user_id": 1
+            })
+            });
+          
+        
+
+
+
+        // gettingTheSelects()
+        // gettingTheQuantities()
+        // console.log(monsterArray, quantityArray);
         
     }
 

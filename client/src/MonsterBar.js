@@ -42,10 +42,7 @@ function MonsterBar(){
 
 
   }
-function remove(element) {
-  let deleteTarget = element.target.parentNode;
-  deleteTarget.remove();
-}  
+
 
   
     return (
@@ -380,7 +377,7 @@ function remove(element) {
               <option value="326">Young White Dragon</option>
               <option value="327">Zombie</option>
             </select>
-            <button className="button-bby" onClick={remove(this)}>+</button>
+            <button className="button-bby">+</button>
           <br />
         <label>Quantity:</label>
         <input type="number" value="1" size="4" min="1" max="99"></input>
